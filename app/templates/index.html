@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid px-4 mt-5 text-center">
+    <div class="p-5 mb-4 bg-light border rounded-3 shadow-sm">
+        <h1 class="display-4 fw-bold text-primary">Sistema MediControl</h1>
+        <p class="fs-4 text-muted my-3">
+            Gestión modular de Médicos, Pacientes y Citas Médicas.
+        </p>
+        <hr class="my-4">
+        <div class="d-flex justify-content-center gap-3">
+            <a href="{{ url_for('bp_medicos.index') }}" class="btn btn-outline-primary btn-lg px-4">Gestionar Médicos</a>
+            <a href="{{ url_for('bp_pacientes.index') }}" class="btn btn-outline-success btn-lg px-4">Gestionar Pacientes</a>
+            <a href="{{ url_for('bp_citas.index') }}" class="btn btn-outline-info btn-lg px-4">Gestionar Citas</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

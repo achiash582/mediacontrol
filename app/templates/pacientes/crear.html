@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-success mb-3">{{ 'Editar Paciente' if paciente else 'Registrar Nuevo Paciente' }}</h2>
+    <form method="POST" class="card p-4 shadow-sm">
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" name="nombre" class="form-control" required
+                   placeholder="Ej. Juan Pérez" value="{{ paciente.nombre if paciente else '' }}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Teléfono</label>
+            <input type="text" name="telefono" class="form-control" required
+                   placeholder="Ej. 70123456" value="{{ paciente.telefono if paciente else '' }}">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-success">Guardar</button>
+            <a href="{{ url_for('bp_pacientes.index') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
